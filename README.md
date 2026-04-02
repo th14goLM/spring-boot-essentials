@@ -3,6 +3,9 @@
 Este repositório foi criado com o objetivo de armazenar **atividades, exercícios e projetos** desenvolvidos durante os estudos de **Spring Boot e desenvolvimento de APIs REST com Java**.
 
 ---
+# 🗺 Mapa mental sobre Spring-boot
+https://coggle.it/diagram/ac3T-6KMUeQ8Ye34/t/java-spring-boot/D-5JITLz2qpGVTuizyCgg8v74OiBgSEzibQhbPbbfPo
+---
 
 ## 🚀 Conteúdo
 
@@ -10,7 +13,7 @@ O repositório está organizado contendo:
 
 * 📌 **Fundamentos do Spring Boot**
   * Configuração do projeto com Spring Initializr
-  * Estrutura de pacotes e camadas (Controller, Service, Repository)
+  * Estrutura de pacotes e camadas (Controller, Service, Repository, Exception, Utils, Handler, Database)
   * Injeção de dependências
 
 * 📌 **Persistência de dados**
