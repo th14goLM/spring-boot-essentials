@@ -16,4 +16,5 @@ public class ProdutoEntity {
     private String nome;
     private BigDecimal preco;
     private Integer quantidade;
+    private String descricao;
 }
