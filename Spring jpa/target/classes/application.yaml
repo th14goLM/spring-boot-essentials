@@ -6,8 +6,13 @@ spring:
     name: spring-boot-essentials-jpa
   datasource:
     url: jdbc:mysql://localhost:3306/gym?createDatabaseIfNotExist=true
-    username:
-    password:
-
-
-
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  #    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true

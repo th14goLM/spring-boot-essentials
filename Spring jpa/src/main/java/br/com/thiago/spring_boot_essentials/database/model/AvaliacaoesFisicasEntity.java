@@ -12,15 +12,18 @@ import java.math.BigDecimal;
 @Getter
 @Setter
 @Builder
-public class AvaliacaoFisicasEntity {
+public class AvaliacaoesFisicasEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     @Column(nullable = false)
     private BigDecimal peso;
+
     @Column(nullable = false)
     private BigDecimal altura;
+
     @Column(name = "percentual_gordura_corporal", nullable = false)
     private BigDecimal porcentagemGorduraCorporal;
 }
