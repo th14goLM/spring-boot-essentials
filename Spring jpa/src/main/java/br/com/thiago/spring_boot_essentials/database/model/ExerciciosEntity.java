@@ -20,5 +20,5 @@ public class ExerciciosEntity {
     private String nome;
 
     @Column(name = "grupo_muscular", nullable = false)
-    private String  grupoMuscular;
+    private String grupoMuscular;
 }
