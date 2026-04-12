@@ -19,7 +19,7 @@ public class TreinosEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable = false, length = 50)
+    @Column(nullable = false)
     private String nome;
 
     @ManyToOne
@@ -32,6 +32,5 @@ public class TreinosEntity {
             joinColumns = @JoinColumn(name = "treino_id"),
             inverseJoinColumns = @JoinColumn(name = "exercicio_id")
     )
-
     private Set<ExerciciosEntity> exercicios = new HashSet<>();
 }

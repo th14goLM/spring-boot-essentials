@@ -1,7 +1,7 @@
 package br.com.thiago.spring_boot_essentials.service;
 
 import br.com.thiago.spring_boot_essentials.database.model.AlunosEntity;
-import br.com.thiago.spring_boot_essentials.database.model.AvaliacaoesFisicasEntity;
+import br.com.thiago.spring_boot_essentials.database.model.AvaliacoesFisicasEntity;
 import br.com.thiago.spring_boot_essentials.database.repository.IAlunosRepository;
 import br.com.thiago.spring_boot_essentials.database.repository.IAvaliacoesFisicasRepository;
 import br.com.thiago.spring_boot_essentials.dto.AvaliacaoFisicaDto;
@@ -21,19 +21,18 @@ public class AvaliacaoFisicaService {
         AlunosEntity aluno = alunosRepository.findById(avaliacaoFisicaDto.getAlunoId())
                 .orElseThrow(() -> new NotFoundException("Aluno não encontrado"));
 
-        AvaliacaoesFisicasEntity avaliacaoFisica = aluno.getAvaliacaoesFisicas();
+        AvaliacoesFisicasEntity avaliacaoFisica = aluno.getAvaliacaoFisica();
         if (avaliacaoFisica != null) {
-            throw new BadRequestException("Avaliação fisica já cadastrada para este aluno");
+            throw new BadRequestException("Avaliação física já cadastrada para este aluno");
         }
-        avaliacaoFisica = AvaliacaoesFisicasEntity.builder()
+
+        avaliacaoFisica = AvaliacoesFisicasEntity.builder()
                 .peso(avaliacaoFisicaDto.getPeso())
                 .altura(avaliacaoFisicaDto.getAltura())
-                .porcentagemGorduraCorporal(avaliacaoFisicaDto.getPercentualGorduraCorporal())
+                .porcentagemGorduraCorporal(avaliacaoFisicaDto.getPorcentagemGorduraCorporal())
                 .build();
 
-        avaliacaoFisica = avaliacoesFisicasRepository.save(avaliacaoFisica);
-
-        aluno.setAvaliacaoesFisicas(avaliacaoFisica);
+        aluno.setAvaliacaoFisica(avaliacaoFisica);
         alunosRepository.save(aluno);
     }
 }

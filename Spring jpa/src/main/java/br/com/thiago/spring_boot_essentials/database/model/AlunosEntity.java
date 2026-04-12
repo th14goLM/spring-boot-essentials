@@ -3,7 +3,6 @@ package br.com.thiago.spring_boot_essentials.database.model;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.math.BigDecimal;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -25,11 +24,11 @@ public class AlunosEntity {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @OneToOne
-    @JoinColumn (name = "avaliacao_fisica_id")
-    private AvaliacaoesFisicasEntity avaliacaoesFisicas;
+    @OneToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "avaliacao_fisica_id")
+    private AvaliacoesFisicasEntity avaliacaoFisica;
 
-    @OneToMany(mappedBy = "aluno")
+    @OneToMany(mappedBy = "aluno", fetch = FetchType.LAZY)
     private Set<TreinosEntity> treinos = new HashSet<>();
 
 }

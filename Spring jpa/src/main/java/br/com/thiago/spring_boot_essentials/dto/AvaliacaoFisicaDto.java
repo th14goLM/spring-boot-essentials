@@ -1,15 +1,14 @@
 package br.com.thiago.spring_boot_essentials.dto;
 
-import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.math.BigDecimal;
 
-@Getter
-@Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Getter
+@Setter
 public class AvaliacaoFisicaDto {
 
     @NotNull
@@ -19,6 +18,6 @@ public class AvaliacaoFisicaDto {
     @NotNull
     private BigDecimal altura;
     @NotNull
-    private BigDecimal percentualGorduraCorporal;
+    private BigDecimal porcentagemGorduraCorporal;
 
 }
